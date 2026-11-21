@@ -35,6 +35,14 @@ export const projects: Project[] = [
     cover: 'linear-gradient(150deg,#1a1410,#5a3a22 45%,#ffb627 120%)',
     url: 'https://161archive.com',
   },
+  {
+    title: 'Made to Order Planner',
+    year: '2026',
+    stack: 'Next.js · Supabase · Tailwind',
+    color: '#21e6ff',
+    cover: 'linear-gradient(135deg,#0b2a33 0%,#0a8fb0 45%,#c6ff3d 130%)',
+    url: 'https://made-to-order-planner.vercel.app',
+  },
   // ↓ placeholders — replace with your real projects
   { title: 'Realtime Collab Editor', year: '2026', stack: 'React · WebSockets · CRDT', color: '#ff2e88', cover: 'conic-gradient(from 45deg,#ff2e88,#6b2cff,#21e6ff,#ff2e88)' },
   { title: 'Payments API Gateway', year: '2025', stack: 'Go · Postgres · Redis', color: '#21e6ff', cover: 'radial-gradient(circle at 30% 30%,#21e6ff,#0a3b6b 60%,#05050a)' },
