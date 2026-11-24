@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import {
-  anaL, anaR, cue, getParams, getState, pads, scratch, setBoth, setBpm, setEcho, setFilter, setVolume, setXfade, toggleDeck,
+  anaL, anaR, cue, getParams, getState, scratch, setBpm, setEcho, setFilter, setVolume, setXfade, toggleDeck,
   type Deck as DeckId,
 } from '../audio/engine';
 import { profile } from '../data/content';
@@ -76,35 +76,6 @@ function Meters() {
   return <div className="meters"><div className="meter" ref={L}>{segs}</div><div className="meter" ref={R}>{segs}</div></div>;
 }
 
-function Pads() {
-  const refs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const hit = (k: string) => {
-    pads.find((p) => p.key === k)?.play();
-    const b = refs.current[k]; if (!b) return;
-    b.classList.add('hit'); setTimeout(() => b.classList.remove('hit'), 120);
-  };
-  useEffect(() => {
-    const key = (e: KeyboardEvent) => {
-      if ((e.target as Element).matches('input,textarea')) return;
-      if (e.code === 'Space') { e.preventDefault(); const s = getState(); setBoth(!(s.A || s.B)); return; }
-      const k = e.key.toUpperCase();
-      if (!e.repeat && pads.some((p) => p.key === k)) hit(k);
-    };
-    addEventListener('keydown', key);
-    return () => removeEventListener('keydown', key);
-  }, []);
-  return (
-    <div className="pads-wrap reveal">
-      {pads.map((p) => (
-        <button key={p.key} ref={(el) => { refs.current[p.key] = el; }} className="pad"
-          style={{ '--pc': p.color } as React.CSSProperties} onPointerDown={() => hit(p.key)}>
-          <kbd>{p.key}</kbd><span>{p.name}</span>
-        </button>
-      ))}
-    </div>
-  );
-}
-
 export default function Decks() {
   const { bpm } = useEngine();
   const p = getParams();
@@ -132,8 +103,6 @@ export default function Decks() {
         <Deck id="B" color="var(--cyan)" sub="BASS · ARP" />
       </div>
 
-      <Pads />
-      <p className="hint">Keyboard: <b>Q W E R / A S D F</b> trigger pads · <b>Space</b> toggles both decks</p>
     </section>
   );
 }

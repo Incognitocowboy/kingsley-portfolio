@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const HOT = 'a,button,.knob,.platter,.pad,.mix,input,textarea';
+const HOT = 'a,button,.knob,.platter,.mix,input,textarea';
 
 export default function Cursor() {
   const ring = useRef<HTMLDivElement>(null);

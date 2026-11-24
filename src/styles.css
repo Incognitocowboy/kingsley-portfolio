@@ -8,7 +8,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:"JetBrains Mono",monospace;overflow-x:hidden;cursor:none}
-a,button,.knob,.pad,.fader,input,textarea{cursor:none}
+a,button,.knob,.fader,input,textarea{cursor:none}
 ::selection{background:var(--pink);color:#000}
 
 /* cursor */
@@ -137,15 +137,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;heigh
 input[type=range]::-moz-range-thumb{width:34px;height:26px;border-radius:6px;border:none;background:linear-gradient(#5b5670,#2b2836);box-shadow:0 4px 8px #000}
 .pitch{display:flex;align-items:center;gap:10px;font-size:10px;color:var(--muted);width:100%}
 
-/* pads */
-.pads-wrap{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:640px;margin-inline:auto}
-@media(max-width:520px){.pads-wrap{grid-template-columns:repeat(2,1fr)}}
-.pad{aspect-ratio:1;border:none;border-radius:16px;background:linear-gradient(150deg,#2a2638,#191621);box-shadow:var(--shadow-out);color:var(--muted);font-family:inherit;font-size:11px;
-  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:12px;letter-spacing:.1em;transition:transform .06s,box-shadow .06s,background .25s,color .2s}
-.pad kbd{font-family:Unbounded;font-weight:900;font-size:22px;color:var(--text)}
-.pad.hit{transform:scale(.95);background:var(--pc);color:#000;box-shadow:0 0 40px var(--pc),var(--shadow-in);transition:none}
-.pad.hit kbd{color:#000}
-.hint{text-align:center;color:var(--muted);font-size:12px;margin-top:16px}
 
 /* mixes */
 .mixes{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
@@ -238,9 +229,6 @@ footer .big:hover{color:var(--pink);-webkit-text-stroke-color:var(--pink)}
 [data-theme="light"] .meter s.on.peak{background:var(--pink)}
 [data-theme="light"] .knob{background:radial-gradient(circle at 35% 30%,#ffffff,#d6cebf)}
 [data-theme="light"] .knob::before{background:conic-gradient(from 225deg,var(--kc,var(--cyan)) calc(var(--v,.5)*270deg),#d3cbbb 0 270deg,transparent 0)}
-[data-theme="light"] .pad{background:linear-gradient(150deg,#ffffff,#e9e2d5)}
-[data-theme="light"] .pad.hit{background:var(--pc);color:#fff}
-[data-theme="light"] .pad.hit kbd{color:#fff}
 [data-theme="light"] input[type=text],[data-theme="light"] input[type=email],[data-theme="light"] textarea{background:#f0eadf}
 [data-theme="light"] .toast{color:#fff}
 [data-theme="light"] .bpm-display{text-shadow:none}

@@ -1,4 +1,4 @@
-// Tiny Web Audio synth: two decks (drums / bass+arp), mixer, pads.
+// Tiny Web Audio synth: two decks (drums / bass+arp), mixer.
 // No samples — every sound is generated.
 
 export type Deck = 'A' | 'B';
@@ -111,24 +111,3 @@ export function setFilter(v: number) { params.filter = v; if (ctx) filter.freque
 export function setEcho(v: number) { params.echo = v; if (ctx) { wet.gain.value = v * 0.7; fb.gain.value = 0.2 + v * 0.45; } }
 export function setVolume(v: number) { params.volume = v; if (ctx) master.gain.value = v; }
 
-// ---------- pads ----------
-export type Pad = { key: string; name: string; color: string; play: () => void };
-const at = (fn: (t: number) => void) => () => fn(ensure().currentTime);
-export const pads: Pad[] = [
-  { key: 'Q', name: 'KICK', color: '#ff2e88', play: at((t) => kick(t, master)) },
-  { key: 'W', name: 'CLAP', color: '#21e6ff', play: at((t) => noise(t, master, 'bandpass', 1400, 0.9, 0.2)) },
-  { key: 'E', name: 'HAT', color: '#c6ff3d', play: at((t) => noise(t, master, 'highpass', 9000, 0.5, 0.08)) },
-  { key: 'R', name: 'LASER', color: '#ffb627', play: at((t) => tone(t, master, 'square', 2400, 120, 0.2, 0.35, 6000)) },
-  { key: 'A', name: 'HORN', color: '#ff2e88', play: at((t) => [0, 0.18, 0.36].forEach((o, i) => tone(t + o, master, 'sawtooth', 466, i === 2 ? 440 : 466, 0.25, i === 2 ? 0.6 : 0.14, 3500))) },
-  {
-    key: 'S', name: 'RISER', color: '#21e6ff', play: at((t) => {
-      const c = ctx!, s = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain();
-      s.buffer = noiseBuf; s.loop = true; f.type = 'bandpass'; f.Q.value = 4;
-      f.frequency.setValueAtTime(300, t); f.frequency.exponentialRampToValueAtTime(9000, t + 2);
-      g.gain.setValueAtTime(0.01, t); g.gain.linearRampToValueAtTime(0.6, t + 2); g.gain.linearRampToValueAtTime(0, t + 2.1);
-      s.connect(f).connect(g).connect(master); s.start(t); s.stop(t + 2.2);
-    }),
-  },
-  { key: 'D', name: 'STAB', color: '#c6ff3d', play: at((t) => [261.6, 311.1, 392, 466.2].forEach((f) => tone(t, master, 'sawtooth', f, 0, 0.12, 0.35, 2500))) },
-  { key: 'F', name: 'DROP', color: '#ffb627', play: at((t) => { tone(t, master, 'sine', 110, 30, 0.9, 1.2, 400); noise(t, master, 'lowpass', 600, 0.5, 0.9); }) },
-];
