@@ -1,0 +1,111 @@
+<!doctype html>
+<!--
+  Source for public/cv.pdf (the "Download CV" button).
+  Edit this file, then run:  npm run cv
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kingsley Ani — Resume</title>
+<style>
+  @page { size: Letter; margin: 0.4in 0.55in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 9.6pt/1.32 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1b1b1f; }
+  a { color: inherit; text-decoration: none; }
+  header { text-align: center; margin-bottom: 10px; }
+  h1 { font-size: 19pt; letter-spacing: .02em; font-weight: 700; }
+  .contact { margin-top: 3px; font-size: 9.4pt; color: #444; }
+  .contact span + span::before { content: " · "; color: #999; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: .12em; color: #6b2cff;
+       border-bottom: 1px solid #d9d4e6; padding-bottom: 2px; margin: 8px 0 4px; }
+  .summary { margin-bottom: 2px; }
+  .skills div { margin-bottom: 1px; }
+  .skills b { display: inline-block; min-width: 148px; }
+  .item { margin-bottom: 5px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .row .when { white-space: nowrap; color: #555; font-size: 9.4pt; }
+  .role { font-style: italic; color: #333; }
+  ul { margin: 2px 0 0 16px; }
+  li { margin-bottom: 1px; padding-left: 2px; }
+  .tech { color: #555; font-size: 9.2pt; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kingsley Ani</h1>
+  <div class="contact">
+    <span>Brooklyn, NY</span>
+    <span>kingsleynick90@gmail.com</span>
+    <span><a href="https://kingsley-portfolio-lovat.vercel.app">kingsley-portfolio-lovat.vercel.app</a></span>
+    <span><a href="https://github.com/Incognitocowboy">github.com/Incognitocowboy</a></span>
+    <span><a href="https://www.linkedin.com/in/kingsley-ani-62a58a209">linkedin.com/in/kingsley-ani-62a58a209</a></span>
+  </div>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">Full-stack developer with 6 years of coding experience, building web apps with React, Next.js, Node.js and AI integrations.</p>
+
+<h2>Skills</h2>
+<div class="skills">
+  <div><b>Languages</b> JavaScript, TypeScript, HTML, CSS, SQL</div>
+  <div><b>Frameworks</b> React, Next.js, Node.js, Express, Tailwind CSS</div>
+  <div><b>Databases &amp; services</b> PostgreSQL, Supabase, MongoDB, Stripe</div>
+  <div><b>AI Integration</b> OpenAI and Anthropic APIs, prompt engineering, AI-powered app features</div>
+  <div><b>Tools</b> Git/GitHub, Vercel, Postman</div>
+</div>
+
+<h2>Experience</h2>
+<div class="item">
+  <div class="row"><div><b>SteezeNYC</b> · <span class="role">Full-stack Developer</span> · New York, NY</div><div class="when">Jan 2025 – Nov 2026</div></div>
+  <ul>
+    <li>Built the company’s website from the ground up with React and Node.js, then maintained and grew it as the main platform for SteezeNYC’s content.</li>
+    <li>Developed REST APIs and database models for articles, media assets and user accounts.</li>
+    <li>Built internal publishing tools that let the editorial team create, schedule and update content without help from engineers.</li>
+    <li>Improved page speed and SEO for content pages through server-side rendering, image optimization and structured metadata.</li>
+    <li>Integrated analytics, email newsletters and e-commerce checkout; shipped campaign landing pages with design and content teams.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><div><b>Freelance</b> · <span class="role">Front-end Developer</span> · Self-employed</div><div class="when">2022 – 2024</div></div>
+  <ul>
+    <li>Designed and built responsive, mobile-first websites for small-business clients, from first mockups to launch and ongoing updates.</li>
+    <li>Built the storefront for <b>161 Archive</b> (161archive.com), an online shop for one-of-a-kind vintage pieces.</li>
+    <li>Turned client designs and feedback into polished, accessible interfaces using React, JavaScript, HTML and CSS; handled hosting, domains and deployments.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><div><b>Adey Law Firm</b> · <span class="role">Legal Assistant</span> · Sugar Land, TX</div><div class="when">Nov 2020 – Dec 2021</div></div>
+  <ul>
+    <li>Managed and updated the firm’s website, keeping practice-area pages, attorney bios and contact details accurate and current.</li>
+    <li>Drafted, formatted and proofread legal documents, letters and filings for attorney review.</li>
+    <li>Organized client files, case records and court deadlines; scheduled consultations and handled client calls and emails.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+<div class="item">
+  <div class="row"><div><b>Made to Order Planner</b> · <span class="tech">Next.js, Supabase, Tailwind CSS</span></div><div class="when">made-to-order-planner.vercel.app</div></div>
+  <ul>
+    <li>Mobile-first scheduling app for makers who build to order: plans each day’s work so orders finish on time and flags at-risk due dates early.</li>
+    <li>Supabase email/password and magic-link auth; a tested scheduler that splits long tasks across days around working hours, days off and shipping buffers.</li>
+  </ul>
+</div>
+<div class="item">
+  <div class="row"><div><b>Email Management AI Agent</b> · <span class="tech">Next.js, LLM APIs</span></div><div class="when">2026</div></div>
+  <ul><li>AI agent that sorts incoming email, drafts replies and summarizes long threads to cut inbox time.</li></ul>
+</div>
+<div class="item">
+  <div class="row"><div><b>Developer Portfolio</b> · <span class="tech">React, TypeScript, Web Audio API</span></div><div class="when">2026</div></div>
+  <ul><li>Interactive DJ-themed portfolio with a from-scratch synth, live visualizer and a working contact form.</li></ul>
+</div>
+
+<h2>Education &amp; Certifications</h2>
+<div class="item">
+  <div class="row"><div><b>University of Houston</b> · <span class="role">Coursework toward B.S. in Electrical and Computer Engineering</span></div><div class="when">2018 – 2021</div></div>
+  <ul><li>Completed 3 years of study · GPA 3.46 · Computer Organization &amp; Architecture, Digital Logic, Programming I &amp; II, Operating Systems</li></ul>
+</div>
+<div class="item">
+  <div class="row"><div><b>Noble Desktop</b> · React Development Bootcamp; JavaScript Development with Node, Express &amp; MongoDB; JavaScript Programming Bootcamp</div><div class="when">Dec 2022 – Jan 2023</div></div>
+</div>
+</body>
+</html>

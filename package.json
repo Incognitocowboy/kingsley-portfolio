@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cv": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf=public/cv.pdf \"file://$PWD/resume/resume.html\""
   },
   "dependencies": {
     "react": "^18.3.1",
