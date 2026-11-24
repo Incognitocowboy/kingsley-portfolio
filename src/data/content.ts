@@ -15,7 +15,7 @@ export const links = {
   cv: '', // add a link to your CV (or put a PDF in /public and use '/cv.pdf')
 };
 
-export const stack = ['TYPESCRIPT', 'REACT', 'NODE', 'PYTHON', 'GO', 'POSTGRES', 'DOCKER', 'AWS'];
+export const stack = ['TYPESCRIPT', 'REACT', 'NODE', 'PYTHON', 'GO', 'POSTGRES', 'DOCKER'];
 
 export type Project = {
   title: string;
@@ -43,23 +43,35 @@ export const projects: Project[] = [
     cover: 'linear-gradient(135deg,#0b2a33 0%,#0a8fb0 45%,#c6ff3d 130%)',
     url: 'https://made-to-order-planner.vercel.app',
   },
+  {
+    title: 'SteezeNYC Website',
+    year: '2025',
+    stack: 'React · Node.js · Media site',
+    color: '#ff2e88',
+    cover: 'linear-gradient(140deg,#0b0a10 0%,#3a0a2a 40%,#ff2e88 110%)',
+    // url: 'https://…', // TODO: add the live link
+  },
+  {
+    title: 'Email Management AI Agent',
+    year: '2026',
+    stack: 'AI agent · LLM APIs · Next.js',
+    color: '#c6ff3d',
+    cover: 'radial-gradient(circle at 70% 30%,#c6ff3d,#2f5a00 45%,#0b0a10 85%)',
+    // url: 'https://….vercel.app', // TODO: add once hosted on Vercel
+  },
   // ↓ placeholders — replace with your real projects
-  { title: 'Realtime Collab Editor', year: '2026', stack: 'React · WebSockets · CRDT', color: '#ff2e88', cover: 'conic-gradient(from 45deg,#ff2e88,#6b2cff,#21e6ff,#ff2e88)' },
-  { title: 'Payments API Gateway', year: '2025', stack: 'Go · Postgres · Redis', color: '#21e6ff', cover: 'radial-gradient(circle at 30% 30%,#21e6ff,#0a3b6b 60%,#05050a)' },
   { title: 'Analytics Dashboard', year: '2025', stack: 'Next.js · D3 · tRPC', color: '#ffb627', cover: 'linear-gradient(160deg,#ffb627,#ff2e88 60%,#3a0a2a)' },
-  { title: 'CLI Deploy Tool', year: '2024', stack: 'Rust · Open source', color: '#c6ff3d', cover: 'repeating-radial-gradient(circle,#c6ff3d 0 6px,#122200 6px 18px)' },
   { title: 'This Portfolio', year: '2026', stack: 'React · Web Audio · Canvas', color: '#21e6ff', cover: 'conic-gradient(#21e6ff 0 25%,#0b0a10 0 50%,#ff2e88 0 75%,#0b0a10 0)', url: 'https://github.com/Incognitocowboy' },
 ];
 
 export type Job = { from: string; to: string; title: string; org: string; tag: string; current?: boolean; url?: string };
 
-// ↓ placeholders except education — replace with your real history
 export const experience: Job[] = [
-  { from: '2024', to: '— NOW', title: 'Senior Software Engineer', org: 'Acme Cloud · Platform team', tag: 'CURRENT', current: true },
-  { from: '2021', to: '— 2024', title: 'Full-stack Developer', org: 'Pixel & Co · Product squad', tag: 'REACT · NODE' },
-  { from: '2019', to: '— 2021', title: 'Frontend Developer', org: 'Startup Studio', tag: 'TYPESCRIPT' },
-  { from: '2018', to: '— 2019', title: 'Software Engineering Intern', org: 'Data Labs', tag: 'PYTHON' },
-  { from: '2018', to: 'GRAD', title: 'B.S. Computer Science', org: 'University of Houston', tag: 'EDUCATION' },
+  { from: 'JAN 2025', to: '— NOV 2026', title: 'Full-stack Developer', org: 'SteezeNYC · New York, NY', tag: 'REACT · NODE', current: true },
+  { from: '2022', to: '— 2024', title: 'Freelance Front-end Developer', org: 'Self-employed · client sites incl. 161 Archive', tag: 'FREELANCE', url: 'https://161archive.com' },
+  { from: 'JAN 2023', to: 'CERTIFIED', title: 'Full-stack JavaScript Certifications', org: 'Noble Desktop · React, Node/Express, MongoDB', tag: 'CERTIFICATIONS' },
+  { from: 'NOV 2020', to: '— DEC 2021', title: 'Legal Assistant', org: 'Adey Law Firm · Sugar Land, TX · managed the firm website', tag: 'WEBSITE' },
+  { from: '2018', to: '— 2021', title: 'Electrical & Computer Engineering', org: 'University of Houston · GPA 3.46', tag: 'EDUCATION' },
 ];
 
 export const about = [
@@ -68,8 +80,8 @@ export const about = [
 ];
 
 export const stats = [
-  { value: 7, suffix: '+', label: 'Years coding' },
-  { value: 40, suffix: '', label: 'Projects shipped' },
+  { value: 6, suffix: '', label: 'Years coding' },
+  { value: 20, suffix: '', label: 'Projects shipped' },
   { value: 5, suffix: 'k', label: 'Commits / year' },
   { value: 99, suffix: '%', label: 'Uptime vibes' },
 ];

@@ -232,3 +232,7 @@ footer .big:hover{color:var(--pink);-webkit-text-stroke-color:var(--pink)}
 [data-theme="light"] input[type=text],[data-theme="light"] input[type=email],[data-theme="light"] textarea{background:#f0eadf}
 [data-theme="light"] .toast{color:#fff}
 [data-theme="light"] .bpm-display{text-shadow:none}
+
+/* contact form states */
+.toast.err{background:var(--pink);color:#fff}
+.btn:disabled{opacity:.6;pointer-events:none}

@@ -19,4 +19,12 @@ npm run build    # production build in dist/
 | A section's layout | `src/components/<Section>.tsx` |
 | Sounds, beat pattern, pads | `src/audio/engine.ts` |
 
-The contact form doesn't send anything yet; see the note at the top of `src/components/Contact.tsx`.
+## Contact form → your inbox
+
+The "Send request" form emails you through [Web3Forms](https://web3forms.com) (free). Your address never appears in the site's code.
+
+1. Go to web3forms.com, enter the inbox you want messages sent to, and copy the access key they email you.
+2. Copy `.env.example` to `.env.local` and paste the key into `VITE_WEB3FORMS_KEY=`. Restart `npm run dev`.
+3. When you deploy (e.g. Vercel), add `VITE_WEB3FORMS_KEY` in the host's environment variables too.
+
+Without a key, the form shows a "not set up yet" message instead of sending.
