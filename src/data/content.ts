@@ -29,7 +29,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: '161 Archive',
-    year: '2026',
+    year: '2024',
     stack: 'E-commerce · Vintage store',
     color: '#ffb627',
     cover: 'linear-gradient(150deg,#1a1410,#5a3a22 45%,#ffb627 120%)',
@@ -59,8 +59,6 @@ export const projects: Project[] = [
     cover: 'radial-gradient(circle at 70% 30%,#c6ff3d,#2f5a00 45%,#0b0a10 85%)',
     // url: 'https://….vercel.app', // TODO: add once hosted on Vercel
   },
-  // ↓ placeholders — replace with your real projects
-  { title: 'Analytics Dashboard', year: '2025', stack: 'Next.js · D3 · tRPC', color: '#ffb627', cover: 'linear-gradient(160deg,#ffb627,#ff2e88 60%,#3a0a2a)' },
   { title: 'This Portfolio', year: '2026', stack: 'React · Web Audio · Canvas', color: '#21e6ff', cover: 'conic-gradient(#21e6ff 0 25%,#0b0a10 0 50%,#ff2e88 0 75%,#0b0a10 0)', url: 'https://github.com/Incognitocowboy' },
 ];
 
