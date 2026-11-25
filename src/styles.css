@@ -236,3 +236,26 @@ footer .big:hover{color:var(--pink);-webkit-text-stroke-color:var(--pink)}
 /* contact form states */
 .toast.err{background:var(--pink);color:#fff}
 .btn:disabled{opacity:.6;pointer-events:none}
+
+/* ── CV viewer ─────────────────────────────────────────────── */
+body.cv-open{overflow:hidden;cursor:auto}
+body.cv-open #cur,body.cv-open #cur-dot{display:none}
+.cv-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:clamp(0px,3vw,32px);
+  background:rgba(5,4,8,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:cv-fade .25s ease-out}
+.cv-modal{width:min(920px,100%);height:min(94vh,1200px);display:flex;flex-direction:column;border-radius:20px;overflow:hidden;
+  background:var(--panel);box-shadow:var(--shadow-out),0 30px 80px rgba(0,0,0,.5);border:1px solid var(--edge);animation:cv-pop .35s cubic-bezier(.2,.9,.3,1.2)}
+.cv-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px 12px 20px;border-bottom:1px solid var(--edge)}
+.cv-title{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.15em;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-title i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);flex:none}
+.cv-actions{display:flex;gap:8px;flex:none}
+.cv-actions .btn{padding:10px 14px;font-size:11px;border-radius:10px}
+.cv-frame{flex:1;width:100%;border:0;background:#e9e7ee}
+@keyframes cv-fade{from{opacity:0}}
+@keyframes cv-pop{from{opacity:0;transform:translateY(24px) scale(.97)}}
+@media (max-width:640px){
+  .cv-modal{height:100%;border-radius:0;border:0}
+  .cv-title{font-size:10px}
+  .cv-name{display:none}
+  .cv-actions .btn{padding:9px 11px}
+}
+@media (prefers-reduced-motion:reduce){.cv-overlay,.cv-modal{animation:none}}

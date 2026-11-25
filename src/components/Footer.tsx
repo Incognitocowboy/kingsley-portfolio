@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { links, profile } from '../data/content';
+import { cvLinkProps } from './CvViewer';
 
 const GitHubIcon = (
   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
@@ -16,7 +17,6 @@ const LinkedInIcon = (
 const socials: { key: string; name: string; href: string; content: ReactNode }[] = [
   { key: 'gh', name: 'GitHub', href: links.github, content: GitHubIcon },
   { key: 'in', name: 'LinkedIn', href: links.linkedin, content: LinkedInIcon },
-  { key: 'cv', name: 'CV', href: links.cv, content: 'CV' },
 ];
 
 export default function Footer() {
@@ -27,6 +27,7 @@ export default function Footer() {
         {socials.map((s) => (
           <a key={s.key} className="btn" aria-label={s.name} title={s.name} href={s.href || '#'} {...(s.href ? { target: '_blank', rel: 'noopener' } : {})}>{s.content}</a>
         ))}
+        <a className="btn" aria-label="View CV" title="CV" {...cvLinkProps()}>CV</a>
       </div>
       © {new Date().getFullYear()} {profile.name}
     </footer>

@@ -12,6 +12,7 @@ import Experience from './components/Experience';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CvViewer from './components/CvViewer';
 
 export default function App() {
   // On air (any deck playing) = light mode, off air = dark mode.
@@ -48,6 +49,7 @@ export default function App() {
       <About />
       <Contact />
       <Footer />
+      <CvViewer />
     </>
   );
 }

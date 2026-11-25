@@ -12,7 +12,8 @@ export const profile = {
 export const links = {
   github: 'https://github.com/Incognitocowboy',
   linkedin: 'https://www.linkedin.com/in/kingsley-ani-62a58a209',
-  cv: '/cv.pdf', // generated from resume/resume.html — run `npm run cv` after editing
+  resume: '/resume.html', // shown in the on-site CV viewer — edit public/resume.html
+  cv: '/cv.pdf', // PDF download, printed from public/resume.html — run `npm run cv` after editing
 };
 
 export const stack = ['TYPESCRIPT', 'REACT', 'NODE', 'PYTHON', 'GO', 'POSTGRES', 'DOCKER'];

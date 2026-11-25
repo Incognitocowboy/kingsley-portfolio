@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { about, links, stats } from '../data/content';
+import { about, stats } from '../data/content';
+import { cvLinkProps } from './CvViewer';
 
 function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const n = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ export default function About() {
         <div className="reveal">
           <div className="sec-head"><span className="num">04</span><h2>About</h2></div>
           {about.map((html, i) => <p key={i} dangerouslySetInnerHTML={{ __html: html }} />)}
-          <a className="btn" href={links.cv || '#'} {...(links.cv ? { target: '_blank', rel: 'noopener' } : {})}>↓ Download CV</a>
+          <a className="btn" {...cvLinkProps()}>View CV</a>
         </div>
         <div className="stats reveal">{stats.map((s) => <Stat key={s.label} {...s} />)}</div>
       </div>
